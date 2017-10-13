@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-story-5',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class Story5Component {
+    @Output() pageEmitter = new EventEmitter<string>();
 
+    changePage(page: string): void {
+        this.pageEmitter.emit(page);
+    }
 }

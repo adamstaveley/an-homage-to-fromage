@@ -1,35 +1,70 @@
-<div *ngIf="selected_page === 'splash'">
-  <button (click)="selected_page = 'contents'">Start</button>
-</div>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    
+    <div *ngIf="selectedPage === 'splash'" class="container has-text-centered">
+      <button class="button" (click)="selectedPage = 'contents'">Start</button>
+    </div>
 
-<div *ngIf="selected_page === 'contents'">
-  <ul>
-    <li><a href="#" (click)="selected_page = 'story1'">1. Falsely Dualing</a></li>
-    <li><a href="#" (click)="selected_page = 'story2'">2. For Want of Trying</a></li>
-    <li><a href="#" (click)="selected_page = 'story3'">3. Evocating Ants</a></li>
-    <li><a href="#" (click)="selected_page = 'story4'">4. Breaking Universal Laws</a></li>
-    <li><a href="#" (click)="selected_page = 'story5'">5. Zed, the Final Letter</a></li>
-  </ul>
-</div>
-
-
-<div *ngIf="selected_page === 'story1'">
-  <app-story-1></app-story-1>
-</div>
-
-<div *ngIf="selected_page === 'story2'">
-  <app-story-2></app-story-2>
-</div>
-
-<div *ngIf="selected_page === 'story3'">
-  <app-story-3></app-story-3>
-</div>
-
-<div *ngIf="selected_page === 'story4'">
-  <app-story-4></app-story-4>
-</div>
-
-<div *ngIf="selected_page === 'story5'">
-  <app-story-5></app-story-5>
-</div>
+    <div *ngIf="selectedPage === 'contents'" class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr (click)="selectedPage = 'story1'">
+            <td>1</td>
+            <td>Falsely Dualing</td>
+            <td>Brie</td>
+          </tr>
+          <tr (click)="selectedPage = 'story2'">
+            <td>2</td>
+            <td>For Want of Trying</td>
+            <td>Gruyère</td>
+          </tr>
+          <tr (click)="selectedPage = 'story3'">
+            <td>3</td>
+            <td>Evocating Ants</td>
+            <td>Reblochon</td>
+          </tr>
+          <tr (click)="selectedPage = 'story4'">
+            <td>4</td>
+            <td>Breaking Universal Rules</td>
+            <td>Chèvre Bûcheron</td>
+          </tr>
+          <tr (click)="selectedPage = 'story5'">
+            <td>5</td>
+            <td>Zed, the Final Letter</td>
+            <td>Gorgonzola</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button class="button" (click)="selectedPage = 'splash'">Back</button>
+    </div> 
   
+    <div *ngIf="selectedPage === 'story1'" class="container">
+      <app-story-1 (pageEmitter)="setPage($event)"></app-story-1>
+    </div>
+    
+    <div *ngIf="selectedPage === 'story2'" class="container">
+      <app-story-2 (pageEmitter)="setPage($event)"></app-story-2>
+    </div>
+    
+    <div *ngIf="selectedPage === 'story3'" class="container">
+      <app-story-3 (pageEmitter)="setPage($event)"></app-story-3>
+    </div>
+    
+    <div *ngIf="selectedPage === 'story4'" class="container">
+      <app-story-4 (pageEmitter)="setPage($event)"></app-story-4>
+    </div>
+    
+    <div *ngIf="selectedPage === 'story5'" class="container">
+      <app-story-5 (pageEmitter)="setPage($event)"></app-story-5>
+    </div>
+    
+  </div>
+</section>
