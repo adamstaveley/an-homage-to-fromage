@@ -2,7 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-story-4',
-    templateUrl: '4android.html'
+    templateUrl: '4android.html',
+    styleUrls: ['story.component.css']
 })
 
 export class Story4Component {

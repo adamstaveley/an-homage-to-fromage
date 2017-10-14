@@ -2,7 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-story-1',
-    templateUrl: '1dualism.html'
+    templateUrl: '1dualism.html',
+    styleUrls: ['story.component.css']
 })
 
 export class Story1Component {

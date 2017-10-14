@@ -1,70 +1,103 @@
-<section class="hero is-fullheight">
-  <div class="hero-body">
-    
-    <div *ngIf="selectedPage === 'splash'" class="container has-text-centered">
-      <button class="button" (click)="selectedPage = 'contents'">Start</button>
-    </div>
+<section [ngSwitch]="selectedPage" class="hero is-fullheight">
 
-    <div *ngIf="selectedPage === 'contents'" class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr (click)="selectedPage = 'story1'">
-            <td>1</td>
-            <td>Falsely Dualing</td>
-            <td>Brie</td>
-          </tr>
-          <tr (click)="selectedPage = 'story2'">
-            <td>2</td>
-            <td>For Want of Trying</td>
-            <td>Gruyère</td>
-          </tr>
-          <tr (click)="selectedPage = 'story3'">
-            <td>3</td>
-            <td>Evocating Ants</td>
-            <td>Reblochon</td>
-          </tr>
-          <tr (click)="selectedPage = 'story4'">
-            <td>4</td>
-            <td>Breaking Universal Rules</td>
-            <td>Chèvre Bûcheron</td>
-          </tr>
-          <tr (click)="selectedPage = 'story5'">
-            <td>5</td>
-            <td>Zed, the Final Letter</td>
-            <td>Gorgonzola</td>
-          </tr>
-        </tbody>
-      </table>
-      
-      <button class="button" (click)="selectedPage = 'splash'">Back</button>
-    </div> 
-  
-    <div *ngIf="selectedPage === 'story1'" class="container">
-      <app-story-1 (pageEmitter)="setPage($event)"></app-story-1>
-    </div>
-    
-    <div *ngIf="selectedPage === 'story2'" class="container">
-      <app-story-2 (pageEmitter)="setPage($event)"></app-story-2>
-    </div>
-    
-    <div *ngIf="selectedPage === 'story3'" class="container">
-      <app-story-3 (pageEmitter)="setPage($event)"></app-story-3>
-    </div>
-    
-    <div *ngIf="selectedPage === 'story4'" class="container">
-      <app-story-4 (pageEmitter)="setPage($event)"></app-story-4>
-    </div>
-    
-    <div *ngIf="selectedPage === 'story5'" class="container">
-      <app-story-5 (pageEmitter)="setPage($event)"></app-story-5>
-    </div>
-    
+  <div *ngSwitchCase="'splash'" class="hero-body splash" (click)="selectedPage = 'contents'">    
+    <!-- <img src="assets/darren-coleshill-178479.jpg" alt="An Homage to Fromage" /> -->
   </div>
+
+  <div *ngSwitchCase="'contents'" class="hero-body">
+      <div class="container content contents">
+        <table class="table is-hoverable">
+          <tbody>
+            <tr (click)="selectedPage = 'story1'">
+              <td>1</td>
+              <td>
+                <b>Falsely Dualing</b
+                ><br>
+                <span *ngFor="let cheese of randomiseCheeses(cheeses.rind)">
+                    <span class="tag">{{ cheese }}</span>
+                  </span>
+              </td>
+              
+            </tr>
+            <tr (click)="selectedPage = 'story2'">
+              <td>2</td>
+              <td>
+                <b>For Want of Trying</b>
+                <br>
+                <span *ngFor="let cheese of randomiseCheeses(cheeses.hard)">
+                    <span class="tag">{{ cheese }}</span>
+                  </span>
+              </td>
+              
+            </tr>
+            <tr (click)="selectedPage = 'story3'">
+              <td>3</td>
+              <td><b>Evocating Ants</b>
+                <br>
+                <span *ngFor="let cheese of randomiseCheeses(cheeses.soft)">
+                    <span class="tag">{{ cheese }}</span>
+                  </span>
+              </td>
+              
+            </tr>
+            <tr (click)="selectedPage = 'story4'">
+              <td>4</td>
+              <td>
+                <b>Breaking Universal Rules</b>
+                <br>
+                <span *ngFor="let cheese of randomiseCheeses(cheeses.semiSoft)">
+                    <span class="tag">{{ cheese }}</span>
+                  </span>
+              </td>
+              
+            </tr>
+            <tr (click)="selectedPage = 'story5'">
+              <td>5</td>
+              <td>
+                <b>Zed, the Final Letter</b>
+                <br>
+                <span *ngFor="let cheese of randomiseCheeses(cheeses.strong)">
+                    <span class="tag">{{ cheese }}</span>
+                  </span>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+        
+        <button class="button" (click)="selectedPage = 'splash'"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        </button>
+      </div> 
+  </div>
+  
+    <div *ngSwitchCase="'story1'" class="hero-body">
+      <div class="container">
+        <app-story-1 (pageEmitter)="setPage($event)"></app-story-1>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'story2'" class="hero-body">
+      <div class="container">
+        <app-story-2 (pageEmitter)="setPage($event)"></app-story-2>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'story3'" class="hero-body">
+      <div class="container">
+        <app-story-3 (pageEmitter)="setPage($event)"></app-story-3>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'story4'" class="hero-body">
+      <div class="container">
+        <app-story-4 (pageEmitter)="setPage($event)"></app-story-4>
+      </div>
+    </div>
+    
+    <div *ngSwitchCase="'story5'" class="hero-body">
+      <div class="container">
+        <app-story-5 (pageEmitter)="setPage($event)"></app-story-5>
+      </div>
+    </div>
+    
 </section>

@@ -1,0 +1,16 @@
+.splash {
+    background: url('../assets/darren-coleshill-178479.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.contents {
+    max-width: 800px;
+}
+
+td {
+    cursor: pointer;
+}
