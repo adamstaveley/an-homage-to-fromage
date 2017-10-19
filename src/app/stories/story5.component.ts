@@ -7,9 +7,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 
 export class Story5Component {
-    @Output() pageEmitter = new EventEmitter<string>();
+    id = 5;
 
-    changePage(page: string): void {
+    @Output() pageEmitter = new EventEmitter<number>();
+
+    changePage(page: number): void {
         this.pageEmitter.emit(page);
     }
 }

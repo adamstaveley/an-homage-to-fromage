@@ -6,7 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedPage = 'splash';
+
+  selectedPage: string | number = 'splash';   // 'splash', 0 (contents), 1, 2, 3, 4, 5
+  showQuiz = false;
 
   cheeses = {
     rind: [
@@ -50,7 +52,7 @@ export class AppComponent {
     return Array.from(cheeses);
   }
 
-  setPage(page: string): void {
+  setPage(page: string | number): void {
     this.selectedPage = page;
   }
 

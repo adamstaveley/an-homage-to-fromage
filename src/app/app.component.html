@@ -1,14 +1,15 @@
 <section [ngSwitch]="selectedPage" class="hero is-fullheight">
 
-  <div *ngSwitchCase="'splash'" class="hero-body splash" (click)="selectedPage = 'contents'">    
+  <div *ngSwitchCase="'splash'" class="hero-body splash" (click)="selectedPage = 0">    
     <!-- <img src="assets/darren-coleshill-178479.jpg" alt="An Homage to Fromage" /> -->
   </div>
 
-  <div *ngSwitchCase="'contents'" class="hero-body">
+  <div *ngSwitchCase="0" class="hero-body">
       <div class="container content contents">
         <table class="table is-hoverable">
           <tbody>
-            <tr (click)="selectedPage = 'story1'">
+
+            <tr (click)="selectedPage = 1">
               <td>1</td>
               <td>
                 <b>Falsely Dualing</b
@@ -17,9 +18,9 @@
                     <span class="tag">{{ cheese }}</span>
                   </span>
               </td>
-              
             </tr>
-            <tr (click)="selectedPage = 'story2'">
+
+            <tr (click)="selectedPage = 2">
               <td>2</td>
               <td>
                 <b>For Want of Trying</b>
@@ -30,7 +31,7 @@
               </td>
               
             </tr>
-            <tr (click)="selectedPage = 'story3'">
+            <tr (click)="selectedPage = 3">
               <td>3</td>
               <td><b>Evocating Ants</b>
                 <br>
@@ -38,9 +39,9 @@
                     <span class="tag">{{ cheese }}</span>
                   </span>
               </td>
-              
             </tr>
-            <tr (click)="selectedPage = 'story4'">
+
+            <tr (click)="selectedPage = 4">
               <td>4</td>
               <td>
                 <b>Breaking Universal Rules</b>
@@ -49,9 +50,9 @@
                     <span class="tag">{{ cheese }}</span>
                   </span>
               </td>
-              
             </tr>
-            <tr (click)="selectedPage = 'story5'">
+
+            <tr (click)="selectedPage = 5">
               <td>5</td>
               <td>
                 <b>Zed, the Final Letter</b>
@@ -60,8 +61,18 @@
                     <span class="tag">{{ cheese }}</span>
                   </span>
               </td>
-              
             </tr>
+
+            <tr (click)="selectedPage = 6">
+              <td></td>
+              <td><i>Acknowledgements</i></td>
+            </tr>
+
+            <tr *ngIf="showQuiz" (click)="selectedPage = 7">
+              <td></td>
+              <td><b>Bonus Quiz!!!</b></td>
+            </tr>
+
           </tbody>
         </table>
         
@@ -70,33 +81,44 @@
       </div> 
   </div>
   
-    <div *ngSwitchCase="'story1'" class="hero-body">
+    <div *ngSwitchCase="1" class="hero-body">
       <div class="container">
         <app-story-1 (pageEmitter)="setPage($event)"></app-story-1>
       </div>
     </div>
     
-    <div *ngSwitchCase="'story2'" class="hero-body">
+    <div *ngSwitchCase="2" class="hero-body">
       <div class="container">
         <app-story-2 (pageEmitter)="setPage($event)"></app-story-2>
       </div>
     </div>
     
-    <div *ngSwitchCase="'story3'" class="hero-body">
+    <div *ngSwitchCase="3" class="hero-body">
       <div class="container">
         <app-story-3 (pageEmitter)="setPage($event)"></app-story-3>
       </div>
     </div>
     
-    <div *ngSwitchCase="'story4'" class="hero-body">
+    <div *ngSwitchCase="4" class="hero-body">
       <div class="container">
         <app-story-4 (pageEmitter)="setPage($event)"></app-story-4>
       </div>
     </div>
     
-    <div *ngSwitchCase="'story5'" class="hero-body">
+    <div *ngSwitchCase="5" class="hero-body">
       <div class="container">
         <app-story-5 (pageEmitter)="setPage($event)"></app-story-5>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="6" class="hero-body">
+      <div class="container contents">
+        <h2 class="title">Acknowledgements</h2>
+        <p>Thanks to all the early-rising cheese producers rolling, spinning and otherwise fondling milk until it turns varying degrees of harder.</p>
+        <br>
+        <p>Thank you for my complete ignorance concerning the production of cheese.</p>
+        <br>
+        <button  class="button" (click)="selectedPage = 0"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
       </div>
     </div>
     
