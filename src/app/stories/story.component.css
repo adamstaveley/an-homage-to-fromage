@@ -3,3 +3,7 @@ div.content {
     margin: auto;
     text-align: justify;
 }
+
+div.preamble {
+    text-align: left;
+}
