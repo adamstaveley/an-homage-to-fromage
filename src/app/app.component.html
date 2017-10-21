@@ -1,6 +1,6 @@
 <section [ngSwitch]="selectedPage" class="hero is-fullheight">
 
-  <div *ngSwitchCase="'splash'" class="hero-body splash" (click)="selectedPage = 0">    
+  <div *ngSwitchCase="'splash'" class="hero-body splash" (click)="selectedPage = storedPage || 0">    
     <!-- <img src="assets/darren-coleshill-178479.jpg" alt="An Homage to Fromage" /> -->
   </div>
 
@@ -9,7 +9,7 @@
         <table class="table is-hoverable">
           <tbody>
 
-            <tr (click)="selectedPage = 1">
+            <tr (click)="setPage(1)">
               <td>1</td>
               <td>
                 <b>Falsely Dualing</b
@@ -20,7 +20,7 @@
               </td>
             </tr>
 
-            <tr (click)="selectedPage = 2">
+            <tr (click)="setPage(2)">
               <td>2</td>
               <td>
                 <b>For Want of Trying</b>
@@ -31,7 +31,7 @@
               </td>
               
             </tr>
-            <tr (click)="selectedPage = 3">
+            <tr (click)="setPage(3)">
               <td>3</td>
               <td><b>Evocating Ants</b>
                 <br>
@@ -41,7 +41,7 @@
               </td>
             </tr>
 
-            <tr (click)="selectedPage = 4">
+            <tr (click)="setPage(4)">
               <td>4</td>
               <td>
                 <b>Breaking Universal Rules</b>
@@ -52,7 +52,7 @@
               </td>
             </tr>
 
-            <tr (click)="selectedPage = 5">
+            <tr (click)="setPage(5)">
               <td>5</td>
               <td>
                 <b>Zed, the Final Letter</b>

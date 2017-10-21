@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  storedPage = parseInt(localStorage.getItem('page'), 10);
+
   selectedPage: string | number = 'splash';   // 'splash', 0 (contents), 1, 2, 3, 4, 5
   showQuiz = false;
 
@@ -52,8 +54,9 @@ export class AppComponent {
     return Array.from(cheeses);
   }
 
-  setPage(page: string | number): void {
+  setPage(page: number): void {
     this.selectedPage = page;
+    page ? localStorage.setItem('page', page.toString()) : localStorage.removeItem('page');
   }
 
 }
