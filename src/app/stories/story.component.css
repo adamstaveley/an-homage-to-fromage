@@ -4,6 +4,20 @@ div.content {
     text-align: justify;
 }
 
+p.normal {
+    text-align: left;
+}
+
 div.preamble {
     text-align: left;
+}
+
+p.break {
+    margin: 40px 0;
+    text-align: center;
+}
+
+span.mono {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+    font-weight: 600;
 }
