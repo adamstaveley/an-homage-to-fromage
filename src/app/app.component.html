@@ -70,11 +70,13 @@
 
             <tr *ngIf="showQuiz" (click)="selectedPage = 7">
               <td></td>
-              <td><b>Bonus Quiz!!!</b></td>
+              <td><i>Quiz</i></td>
             </tr>
 
           </tbody>
         </table>
+
+        <br>
         
         <button class="button" (click)="selectedPage = 'splash'"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         </button>
@@ -118,7 +120,17 @@
         <br>
         <p>Thank you for my complete ignorance concerning the production of cheese.</p>
         <br>
+        <p>Cover: Darren Coleshill</p>
+        <br>
+        <p><i>A.S.</i></p>
+        <br><br>
         <button  class="button" (click)="selectedPage = 0"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="7" class="hero-body">
+      <div class="container">
+        <app-quiz (pageEmitter)="setPage($event)"></app-quiz>
       </div>
     </div>
     

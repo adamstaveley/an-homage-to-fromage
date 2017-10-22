@@ -1,0 +1,115 @@
+<div [ngSwitch]="quizPage" class="quiz">
+
+    <div *ngSwitchCase="0">
+
+        <p>
+            As reward for your resolve to finish each story (else your intuition to flick through each page), a short quiz has been prepared
+            for you.
+        </p>
+
+        <br>
+
+        <button class="button" (click)="changePage(0)">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        </button>
+        <button *ngIf="!quizPage" class="button" (click)="quizPage = 1; countdown(1, 10)">
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </button>
+
+    </div>
+
+    <div *ngSwitchCase="1">
+
+        <p>
+            <b>Q1.</b> You order Gorganzola. Your waitress offers you a choice of
+            <em>dolce</em> or
+            <em>piccante</em>.</p>
+
+        <br>
+
+        <p>Quickly! What is your decision?</p>
+
+        <br>
+
+        <p>
+            <b>Time remaining:</b> {{ cdTime }}</p>
+
+        <br>
+
+        <button class="button" (click)="submit(0, 'Dolce')">Dolce</button>
+        <button class="button" (click)="submit(0, 'Piccante')">Piccante</button>
+
+    </div>
+
+    <br>
+
+    <div *ngSwitchCase="2">
+
+        <p>
+            <b>Q2.</b> Who are the biggest dreamers?</p>
+
+        <br>
+
+        <button class="button" (click)="submit(1, 'Humans')">Humans</button>
+        <button class="button" (click)="submit(1, 'Ants')">Ants</button>
+        <button class="button" (click)="submit(1, 'Both')">Both</button>
+
+    </div>
+
+    <div *ngSwitchCase="3">
+
+        <p>
+            <b>Q3.</b> Where should you go for the best cheeses?</p>
+
+        <br>
+
+        <button class="button" (click)="submit(2, 'Italy')">Italy</button>
+        <button class="button" (click)="submit(2, 'France')">France</button>
+        <button class="button" (click)="submit(2, 'UK')">UK</button>
+        <button class="button" (click)="submit(2, 'Mexico')">Mexico</button>
+        <button class="button" (click)="submit(2, 'Turkey')">Turkey</button>
+        <button class="button" (click)="submit(2, 'Denmark')">Denmark</button>
+        <button class="button" (click)="submit(2, 'Spain')">Spain</button>
+        <button class="button" (click)="submit(2, 'Greece')">Greece</button>
+        <button class="button" (click)="submit(2, 'India')">India</button>
+        <button class="button" (click)="submit(2, 'Switzerland')">Switzerland</button>
+
+    </div>
+
+    <div *ngSwitchCase="4">
+
+        <p>You scored: {{ score }} / 3</p>
+
+        <br>
+
+        <p>
+            <b>Q1.</b> {{ answers[0] === correctAnswers[0] ? 'Correct!' : 'Wrong!' }}
+            <br>
+            <em>Always piccante.</em>
+        </p>
+
+        <br>
+
+        <p>
+            <b>Q2.</b> {{ answers[1] === correctAnswers[1] ? 'Correct!' : 'Wrong!' }}
+            <br>
+            <em>I guess we're both pretty big dreamers.</em>
+        </p>
+
+        <br>
+
+        <p>
+            <b>Q3.</b> {{ answers[2] === correctAnswers[2] ? 'Correct!' : 'Wrong!' }}
+            <br>
+            <em>Don't limit yourself to any one country.</em>
+        </p>
+
+        <br>
+
+        <button class="button" (click)="changePage(0)">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        </button>
+
+    </div>
+
+</div>

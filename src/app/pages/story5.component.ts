@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-    selector: 'app-story-4',
-    templateUrl: '4android.html',
-    styleUrls: ['story.component.css']
+    selector: 'app-story-5',
+    templateUrl: '5zed.html',
+    styleUrls: ['page.component.css']
 })
 
-export class Story4Component {
-    id = 4;
+export class Story5Component {
+    id = 5;
 
     @Output() pageEmitter = new EventEmitter<number>();
 

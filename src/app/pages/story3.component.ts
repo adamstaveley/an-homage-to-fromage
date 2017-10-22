@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-    selector: 'app-story-2',
-    templateUrl: '2religion.html',
-    styleUrls: ['story.component.css']
+    selector: 'app-story-3',
+    templateUrl: '3nostalgia.html',
+    styleUrls: ['page.component.css']
 })
 
-export class Story2Component {
-    id = 2;
+export class Story3Component {
+    id = 3;
 
     @Output() pageEmitter = new EventEmitter<number>();
 
