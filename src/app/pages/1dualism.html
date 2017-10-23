@@ -16,11 +16,15 @@
         
         <br>
     
-        <button  class="button" (click)="changePage(0)"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button class="button" (click)="changePage(0)"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button class="button" (click)="jumpToLastPosition()"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+        
+        <br><br><br *ngIf="!showBookmarkHelp">
+        <p class="is-size-6" *ngIf="showBookmarkHelp"><i>Click to return to last known position</i></p>     
         
     </div>
 
-    <br><br><br>
+    <br><br>
 
     <p>
         Surrounded by images, converging and conflicting, Little Jordan would eventually grow to become confused. He would see a colony of difference among the nations of the same. The straight roads he grew up in would become winding, would fork, would even lead to dead ends. Now, however, he saw only opportunity, felt only candour and optimism. He saw people walking to work, to the bus stop, to the cinema on the corner once a resting place for the young and the old. They never stopped walking, they will never stop walking. Little Jordan... or was it ever Little Jordan? Nevertheless his concept of time had not yet fully developed, had not the chance, no... the fortune, to mature. Witness only to linearity, choice was a burden to him. Under the influence of the image of his parents he followed them blindly; he did not think, did not have to think, did not believe that he would one day think, not out of choice but out of duty. So he followed the path laid out for him: he only walked on the right hand side of the streets in the city he grew up in.

@@ -16,7 +16,11 @@
         
         <br>
     
-        <button  class="button" (click)="changePage(0)"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button class="button" (click)="changePage(0)"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button class="button" (click)="jumpToLastPosition()"><i class="fa fa-bookmark" aria-hidden="true"></i></button>
+        
+        <br><br><br *ngIf="!showBookmarkHelp">
+        <p class="is-size-6" *ngIf="showBookmarkHelp"><i>Click to return to last known position</i></p> 
         
     </div>
     
